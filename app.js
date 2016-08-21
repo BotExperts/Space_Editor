@@ -55,15 +55,15 @@ app.get('/',function(req,res,next){
   req.url = "index.html";
   staticProvider(req, res, next);
 });
-var port = process.env.PORT || 3149;
+var port = process.env.PORT || 3000;
 var server = app.listen(port); 
  
-var EDITABLE_APPS_DIR = "/APPS/"; 
+var EDITABLE_APPS_DIR = "sessions/"; 
 var ENABLE_LAUNCH     = false;
 
 // -----------------------------------------------------
 // for demo clean-up (remove if this gives you problems)
-var REPLACE_SANDBOX_APP_DEMO_FILES = true;
+var REPLACE_SANDBOX_APP_DEMO_FILES = false;
 if(REPLACE_SANDBOX_APP_DEMO_FILES){
   fs.copyF = function (src, dst, cb) {
     function copy(err) {
